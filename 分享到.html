@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分享到</title>
+    <style>
+        *{margin:0;padding:0;}
+        #div{
+            width:130px;
+            height:250px;
+            background: #ccc;
+            position: relative;
+            top:200px;
+            left: -130px;
+        }
+        #span{
+            width:30px;
+            height:60px;
+            background: #f60;
+            position: absolute;
+            top:95px;
+            right:-30px;
+            text-align: center;
+            line-height: 19px;
+            color:#fff;
+            font-family: "黑体";
+            font-size: 15px;
+        }
+        div img{filter:alpha(opacity:30);opacity:0.3;}
+    </style>
+</head>
+<body>
+<div>
+    <img src="1.jpg" id="img">
+</div>
+    <div id="div">
+        <span id="span">分享到</span>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        var imgobj = document.getElementById("img");
+        var opacity = 30;
+        var timer = null;
+        imgobj.onmouseover = function () {
+            move(100);
+        };
+        imgobj.onmouseout = function () {
+            move(30);
+        };
+        function move(num){
+            clearInterval(timer);
+            var speed = 0;
+            if(opacity < num){
+                speed = 10;
+            }
+            else{
+                speed = -10;
+            }
+            timer = setInterval(function(){
+                if(opacity == num){
+                    clearInterval(timer);
+                }
+                else{
+                    opacity += speed;
+                    imgobj.style.filter = "alpha(opacity:"+opacity+")";
+                    imgobj.style.opacity = opacity/100;
+                }
+            },30)
+        }
+
+
+
+        var oDiv = document.getElementById("div");
+        var timer = null;
+
+        oDiv.onmouseover = function () {
+            startMove(0);
+        };
+        oDiv.onmouseout = function () {
+            startMove(-130);
+        };
+         function startMove(iTarget){
+             clearInterval(timer);
+             var speed = 0;
+             if(oDiv.offsetLeft > iTarget){
+                 speed = -10;
+             }
+             else{
+                 speed = 10;
+             }
+            timer = setInterval(function(){
+                if(oDiv.offsetLeft == iTarget){
+                    clearInterval(timer);
+                }
+                else{
+                    oDiv.style.left = oDiv.offsetLeft+speed+"px";
+                }
+            },30)
+        }
+    }
+</script>
+</html>

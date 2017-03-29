@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="txt">
+<input id="btn" type="button" value="添加元素">
+<ul id="ul">
+
+</ul>
+</body>
+<script>
+    window.onload = function () {
+        var btn1 = document.getElementById("btn");
+        var ul1 = document.getElementById("ul");
+        var txt1 = document.getElementById("txt");
+
+        btn1.onclick = function () {
+            var li1 = document.createElement("li");
+            var li2 = document.getElementsByTagName("li");
+            li1.innerHTML = txt1.value;
+            if(li2.length>0){
+                ul1.insertBefore(li1,li2[0]);
+            }
+            else{
+                ul1.appendChild(li1);
+            }
+            for(var i=0;i<li2.length;i++){
+                li2[i].onclick = function () {
+                    ul1.removeChild(this);
+                }
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{width:100px;height: 100px;background: red;position:absolute;left: 0;top: 100px;}
+        #div2{width:1px;height: 300px;background: #000;position:absolute;left: 300px;}
+    </style>
+</head>
+<body>
+<input type="button" value="开始运动" id="btn">
+    <div id="div1">
+
+    </div>
+    <div id="div2">
+
+    </div>
+</body>
+<script>
+    window.onload= function () {
+        var div1 = document.getElementById("div1");
+        var btn = document.getElementById("btn");
+        var timer = null;
+        clearInterval(timer);
+        btn.onclick = function () {
+            move();
+        };
+        function move(){
+            timer = setInterval(function(){
+                var speed = (300-div1.offsetLeft)/10;
+                speed=speed>0?Math.ceil(speed):Math.floor(speed);
+                div1.style.left = div1.offsetLeft+speed+"px";
+            },30);
+        }
+    }
+</script>
+</html>

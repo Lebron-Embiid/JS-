@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #table tr td{border:1px solid #000;width:100px;}
+    </style>
+</head>
+<body>
+<input type="text" id="txt">
+<input type="button" value="搜索" id="btn">
+    <table id="table">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>年龄</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>张三</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>李四</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>王五</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>赵六</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>陈七</td>
+                <td>20</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    window.onload = function () {
+        var oTab = document.getElementById("table");
+        var oldColor = "";
+        for(var i=0;i<oTab.tBodies[0].rows.length;i++){
+            oTab.tBodies[0].rows[i].onmouseover = function () {
+                oldColor = this.style.background;
+                this.style.background = "#f60";
+            };
+            oTab.tBodies[0].rows[i].onmouseout = function () {
+                this.style.background = oldColor;
+            };
+            if(i%2){
+                oTab.tBodies[0].rows[i].style.background = "";
+            }
+            else{
+                oTab.tBodies[0].rows[i].style.background = "#ccc";
+            }
+        }
+    }
+</script>
+</html>

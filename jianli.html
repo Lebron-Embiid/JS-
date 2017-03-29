@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人简历</title>
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        .l{float: left;}
+        .r{float:right;}
+        .clear{clear: both;}
+        .person-box{width: 794px;height:1123px;margin:0 auto;background: #94b8eb;position: relative;z-index: 2;}
+        .person-title{width:794px;height:80px;box-shadow:0 5px 5px #35a2ff;background: -webkit-gradient(linear,left top,right bottom, from(#55ccff), to(#318fde));color:#fff;font-size: 40px;font-family: "微软雅黑";text-align: center;line-height: 75px;text-shadow: 2px 2px 5px black,2px 2px 5px #f60,2px 2px 5px blue;}
+        .person-photo img{width:120px;height:120px;margin:30px 0 30px 50px;border:3px solid #0094eb;border-radius: 50%;}
+        .person-job{margin:60px 200px 0 0;padding:5px 5px;color: #0070de;text-shadow: 1px 1px 5px #d1ffb3;}
+        .person-job span{display:block;font-size:28px;color: #0067d6;text-shadow: 1px 1px 6px #65d4ff,2px 2px 3px #b9ffa2;float: right;margin:-6px 0 0 20px;}
+        .person-box h4{color: #0077de;float: left;margin:20px 0 0 142px;font-size: 15px;text-shadow: 1px 1px 3px #b4ff9f;}
+        .about-me h2{font-family: "KaiTi_GB2312";font-size: 30px;text-shadow: 2px 2px 5px #e6fff1,2px 2px 2px #b3ffec;color: #000000;}
+        .about-me ul li{list-style: none;padding:10px 0 5px 5px;color:#2E302F;font-family: "Microsoft YaHei";}
+        .rank{position:absolute;top:-84px;left:-10px;width:130px;height: 100px;z-index: 0;}
+        .rank .one{font-size: 120px;font-family: "SimHei";}
+        .rank div{width:100px;height:18px;position:absolute;left: 2px;top:72px;z-index: 1;background:#94b8eb;}
+        .rank div span:first-child{color:#1386d6;font-weight: bold;font-family: "Microsoft YaHei";font-size: 15px;}
+        .rank div span:last-child{color:#918F90;font-size: 12px;text-transform: uppercase;}
+        .about-me{width:280px;height: 360px;margin:80px 50px 30px 50px;padding-top: 30px;border-top: 1px solid #CCCACB;position: relative;}
+        .person-skill{width:280px;height: 360px;margin:80px 10px 30px 50px;padding-top: 30px;border-top: 1px solid #CCCACB;position: relative;}
+        .person-skill ul{list-style: none;font-weight: bold;font-size: 14px;text-align: center;line-height: 50px;}
+        .person-skill ul li{width:50px;height:50px;border-radius: 50%;color:#fff;margin-top: 5px;position: relative;}
+        .person-skill ul li:first-child{background: #DE4B27;}
+        .person-skill ul li:nth-child(2){background: #0071C0;}
+        .person-skill ul li:nth-child(3){background: #FFB400;}
+        .person-skill ul li:nth-child(4){background: #0669AD;}
+        .person-skill ul li:nth-child(5){background: #563E7C;}
+        .person-skill ul li:nth-child(6){background: #526494;color: #fff;}
+        .person-skill ul li:last-child{background: #44CCD2;}
+        .person-skill .progress{width:200px;height:5px;border-radius: 50px;position: absolute;top:24px;left:80px;}
+        .person-skill .progress span{display:block;position: absolute;height:5px;border-radius: 50px;}
+        .person-skill ul li:first-child .progress{background:#DE4B27;}
+        .person-skill ul li:first-child .progress span{background: #f48958;width:180px;}
+        .person-skill ul li:nth-child(2) .progress{background:#0071C0;}
+        .person-skill ul li:nth-child(2) .progress span{background: #44b1dd;width:180px;}
+        .person-skill ul li:nth-child(3) .progress{background:#FFB400;}
+        .person-skill ul li:nth-child(3) .progress span{background: #d1c172;width:170px;}
+        .person-skill ul li:nth-child(4) .progress{background:#0669AD;}
+        .person-skill ul li:nth-child(4) .progress span{background: #58b0d5;width:160px;}
+        .person-skill ul li:nth-child(5) .progress{background:#563E7C;}
+        .person-skill ul li:nth-child(5) .progress span{background: #9273ad;width:150px;}
+        .person-skill ul li:nth-child(6) .progress{background: #17255d;}
+        .person-skill ul li:nth-child(6) .progress span{background: #4259ad;width:140px;}
+        .person-skill ul li:last-child .progress{background: #24cad2;}
+        .person-skill ul li:last-child .progress span{background: #6fd0cd;width:140px;}
+        .self-evaluation{width:650px;height: 180px;margin:100px 10px 30px 60px;padding-top: 30px;border-top: 1px solid #CCCACB;position: relative;}
+        .self-evaluation ul li{list-style: none;padding:10px 0 5px 5px;color:#2E302F;font-family: "Microsoft YaHei";}
+    </style>
+</head>
+<body>
+    <div class="person-box">
+        <p class="person-title">个人简历</p>
+        <div>
+            <div class="person-photo l"><img src="lzg.jpg" alt="lzg" style="width: 120px;height:120px;"></div>
+            <h3 class="person-job r">求职意向: <span>Web前端开发</span></h3>
+            <h4>伟大的作品，不是靠力量而是靠坚持才完成的</h4>
+        </div>
+        <div class="about-me clear l">
+            <h2>刘质光</h2>
+            <ul>
+                <li>性别:男</li>
+                <li>出生年月:1996.06</li>
+                <li>毕业学校:武汉软件工程职业学院</li>
+                <li>所学专业:物联网应用技术</li>
+                <li>学历:大专</li>
+                <li>工作经验:应届生</li>
+                <li>现住地址:武汉</li>
+                <li>联系方式:13114422771</li>
+                <li>个人邮箱:973265025@qq.com</li>
+                <li>获得证书:英语三级 / Office操作四级</li>
+            </ul>
+            <div class="rank clear">
+                <a class="one">1</a>
+                <div><span>关于我 </span><span>About Me</span></div>
+            </div>
+        </div>
+        <div class="person-skill l">
+            <ul>
+                <li>HTML5<div class="progress"><span></span></div></li>
+                <li>CSS3<div class="progress"><span></span></div></li>
+                <li>JS<div class="progress"><span></span></div></li>
+                <li>Jquery<div class="progress"><span></span></div></li>
+                <li>BS<div class="progress"><span></span></div></li>
+                <li>PHP<div class="progress"><span></span></div></li>
+                <li>Ajax<div class="progress"><span></span></div></li>
+            </ul>
+            <div class="rank">
+                <a class="one l">2</a>
+                <div class="l"><span>操作技能 </span><span>Skill</span></div>
+            </div>
+        </div>
+        <div class="self-evaluation l">
+            <ul>
+                <li>(1)本人个性随和，为人谦虚、自律、自信、大方。</li>
+                <li>(2)做事认真谨慎，工作态度严谨细致。</li>
+                <li>(3)有上进心，勤奋好学，兴趣爱好广泛，踏实肯干。</li>
+                <li>(4)能吃苦耐劳，乐于助人，有较强的职业精神。</li>
+                <li>(5)具备较强的自学能力，有团队合作精神，对web前端技术兴趣浓厚。</li>
+            </ul>
+            <div class="rank clear">
+                <a class="one">3</a>
+                <div><span>自我评价 </span><span>Self</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

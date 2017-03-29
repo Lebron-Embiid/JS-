@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <script type="application/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="application/javascript" src="jquery-ui.js"></script>
+    <style type="text/css">
+        #div1{
+            width:200px;
+            height:200px;
+            background: #e5e5e5;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    lebron james
+</div>
+</body>
+<script>
+    $(function () {
+        $("#div1").draggable();
+    });
+//    window.onload = function () {
+//        var li = document.getElementById("li");
+//        alert($.trim(li.className));
+//    };
+
+//    $(function () {
+//        $('ul li').each(function (index,elements) {
+//            $(elements).html(index);
+//        })
+//    });
+
+//    $(function () {
+//        $(document).bind("click", function (event) {
+//            alert(event.pageX+"_"+event.pageY);
+//        })
+//    })
+</script>
+</html>

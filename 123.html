@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*div{margin:10px;float:left;}*/
+        /*#div1{ width: 50px;height: 50px;background: red;}*/
+        /*#div2{width:300px;height: 180px;background: #ccc;display: none;}*/
+        *{margin:0;padding:0;}
+        #div1{width:191px;height: 66px;position: relative;margin:100px auto;overflow: hidden;}
+        #div1 ul{position: absolute;top:0;left:0;}
+        #div1 ul li{width:191px;height: 66px;list-style: none;padding-bottom: 10px;}
+    </style>
+</head>
+<body>
+    <!--<div id="div1"></div>-->
+    <!--<div id="div2"></div>-->
+    <div id="div1">
+        <ul>
+            <li><img src="1.jpg"></li>
+            <li><img src="2.jpg"></li>
+            <li><img src="3.jpg"></li>
+        </ul>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        var oDiv = document.getElementById("div1");
+        var oUl = oDiv.getElementsByTagName("ul")[0];
+        var aLi = oUl.getElementsByTagName("li");
+        oUl.innerHTML = oUl.innerHTML+oUl.innerHTML;
+        oUl.style.height = aLi[0].offsetHeight*aLi.length+"px";
+
+        var stop = setInterval(move,50);
+        function move() {
+            if(oUl.offsetTop<-oUl.offsetHeight/2){
+                oUl.style.top = "0";
+            }
+            oUl.style.top = oUl.offsetTop-2+"px";
+        }
+        oDiv.onmouseover = function () {
+            clearInterval(stop);
+        };
+        oDiv.onmouseout = function () {
+            stop = setInterval(move,50);
+        }
+    };
+//    window.onload= function () {
+//        var oDiv1 = document.getElementById("div1");
+//        var oDiv2 = document.getElementById("div2");
+//        var timer = null;
+//        oDiv1.onmouseover = oDiv2.onmouseover = function () {
+//            clearTimeout(timer);
+//            oDiv2.style.display = "block";
+//        };
+//        oDiv1.onmouseout = oDiv2.onmouseout = function () {
+//            timer = setTimeout(function () {
+//                oDiv2.style.display = "none";
+//            },500)
+//        };
+//    };
+//    window.onload = function(){
+//    function getStyle(obj,name){
+//        if(obj.currentStyle){
+//            return obj.currentStyle[name];
+//        }
+//        else{
+//            return getComputedStyle(obj,null)[name];
+//        }
+//    }
+//        var div1 = document.getElementById("div1");
+//        alert(getStyle(div1,"backgroundColor"));
+//    };
+    //    function sum(){
+    //        var s =0;
+    //        for(var i=0;i<arguments.length;i++){
+    //           s += arguments[i];
+    //        }
+    //        return s;
+    //    }
+    //    alert(sum(11,23,42,11,23,42,11,23,42,11,23,4211,23,42));
+</script>
+</html>
